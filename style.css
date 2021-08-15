@@ -25,3 +25,7 @@ body {
   line-height: 30px;
   padding-left: 10px;
 }
+
+.tabHeader {
+  background-image: url("https://media-exp1.licdn.com/dms/image/C4D0BAQEJC7BN3dBWxw/company-logo_100_100/0/1617453666937?e=1637193600&amp;v=beta&amp;t=lj5JbZJsqi3lJFOxL9GxYb172vZ4peZbzctYZt5enP8");
+}
