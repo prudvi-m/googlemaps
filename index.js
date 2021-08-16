@@ -56,7 +56,6 @@ function update() {
   var originValue = String(marker.getPosition());
   document.getElementById("origin").value = originValue;
   var geoArr = originValue.replace("(", "").replace(")", "").split(",");
-  debugger;
   currentCordinates.lat = parseFloat(geoArr[0]);
   currentCordinates.lng = parseFloat(geoArr[1]);
   circleInit();
@@ -75,4 +74,12 @@ function circleInit() {
       center: currentCordinates,
       radius: parseFloat($("#txtRadius").val()),
     });
+}
+
+function validateRadius() {
+  var x = window.event.which || window.event.keycode;
+  var valid = (x >= 48 && x <= 57) || x == 8 || x == 13;
+  // 8 backspace || 13 enter
+  if (valid) circleInit();
+  return valid;
 }

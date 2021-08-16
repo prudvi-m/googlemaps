@@ -16,7 +16,7 @@
     <div
       class="shadow-lg p-3 mt-3 mapWidth"
       id="floating-panel"
-      style="height: calc(100vh - 12%); width: calc(100vw - 60%)"
+      style="height: calc(100vh - 12%); width: calc(100vw - 30%)"
     >
       <div class="mb-1" style="margin: 20px">
         <input
@@ -31,6 +31,8 @@
         <input
           type="text"
           name="Address"
+          onkeydown="return validateRadius();"
+          onkeyup="return validateRadius();"
           id="txtRadius"
           onchange="circleInit()"
           placeholder="Radius in feet"
