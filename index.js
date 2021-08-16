@@ -7,12 +7,8 @@ var map;
 var locationRadius;
 var currentCordinates;
 
-/*var exact_Location = {lat : 0 , long : 0};*/
-
 function initGoolgeMapAPI() {
   searchBoxInit();
-  //mapInit();
-  //markerInit();
 }
 
 function searchBoxInit() {
@@ -31,8 +27,6 @@ function searchBoxInit() {
     mapInit();
     markerInit();
     circleInit();
-    // if ($("#txtRadius").val() != "") circleInit();
-    // else locationRadius = "";
   });
 }
 
@@ -79,6 +73,6 @@ function circleInit() {
       fillOpacity: 0.35,
       map,
       center: currentCordinates,
-      radius: parseFloat($("#txtRadius").val()), //$("#txtRadius").val(),
+      radius: parseFloat($("#txtRadius").val()),
     });
 }
