@@ -20,10 +20,10 @@ function searchBoxInit() {
   );
   google.maps.event.addListener(autocomplete, "place_changed", function () {
     var near_place = autocomplete.getPlace();
-    console.log(near_place);
-    var lat = near_place.geometry.location.lat();
-    var lng = near_place.geometry.location.lng();
-    currentCordinates = { lat: lat, lng: lng };
+    currentCordinates = {
+      lat: near_place.geometry.location.lat(),
+      lng: near_place.geometry.location.lng(),
+    };
     mapInit();
     markerInit();
     circleInit();
