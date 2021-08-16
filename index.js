@@ -30,8 +30,8 @@ function searchBoxInit() {
     currentCordinates = { lat: lat, lng: lng };
     mapInit();
     markerInit();
-    radiusInit();
-    // if ($("#txtRadius").val() != "") radiusInit();
+    circleInit();
+    // if ($("#txtRadius").val() != "") circleInit();
     // else locationRadius = "";
   });
 }
@@ -59,10 +59,16 @@ function markerInit() {
 }
 
 function update() {
-  document.getElementById("origin").value = String(marker.getPosition());
+  var originValue = String(marker.getPosition());
+  document.getElementById("origin").value = originValue;
+  var geoArr = originValue.replace("(", "").replace(")", "").split(",");
+  debugger;
+  currentCordinates.lat = parseFloat(geoArr[0]);
+  currentCordinates.lng = parseFloat(geoArr[1]);
+  circleInit();
 }
 
-function radiusInit() {
+function circleInit() {
   locationRadius?.setMap(null);
   if ($("#txtRadius").val() != "" && $("#txtAddress").val() != "")
     locationRadius = new google.maps.Circle({
@@ -73,6 +79,6 @@ function radiusInit() {
       fillOpacity: 0.35,
       map,
       center: currentCordinates,
-      radius: parseInt($("#txtRadius").val()), //$("#txtRadius").val(),
+      radius: parseFloat($("#txtRadius").val()), //$("#txtRadius").val(),
     });
 }
