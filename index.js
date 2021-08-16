@@ -1,9 +1,10 @@
 // This example requires the Geometry library. Include the libraries=geometry
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry">
-let marker;
-let autocomplete;
-let map;
+var marker;
+var autocomplete;
+var map;
+/*var exact_Location = {lat : 0 , long : 0};*/
 
 function initGoolgeMapAPI() {
   searchBoxInit();
@@ -31,7 +32,7 @@ function searchBoxInit() {
 
 function mapInit(lat, lng) {
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4.5,
+    zoom: 5.5,
     center: { lat: lat, lng: lng },
     mode: "places",
   });

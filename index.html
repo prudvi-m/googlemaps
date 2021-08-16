@@ -2,20 +2,45 @@
 <html>
   <head>
     <title>timerack Google Maps</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" type="text/css" href="./style.css" />
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./index.js"></script>
   </head>
   <body>
-    <div>
-      <input type="text" id="txtAddress" />
+    <div
+      class="shadow-lg p-3 mt-3 mapWidth"
+      id="floating-panel"
+      style="height: calc(100vh - 12%); width: calc(100vw - 60%)"
+    >
+      <div class="mb-1">
+        Address :
+        <input
+          type="text"
+          name="Address"
+          id="txtAddress"
+          placeholder="Location"
+          class="form-control input-lg"
+        />
+      </div>
+      <div
+        id="map"
+        class="shadow-lg mt-3"
+        style="width: 100%; height: 75%"
+        runat="server"
+        visible="false"
+      ></div>
+      <br />
+      <div class="form-group">
+        <input name="ExactLocation"" class="form-control input-lg" type="text"
+        readonly id="origin" placeholder="location co-ordinates" />
+      </div>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACg7bDUW8yAdMiEb-stiY1tW21_kD6YrM&callback=initGoolgeMapAPI&libraries=geometry,places&v=weekly"></script>
     </div>
-    <div id="map"></div>
-    <div id="floating-panel ">
-      Origin: <input type="text" readonly id="origin" />
-    </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACg7bDUW8yAdMiEb-stiY1tW21_kD6YrM&callback=initGoolgeMapAPI&libraries=geometry,places&v=weekly"></script>
   </body>
 </html>
